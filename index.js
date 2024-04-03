@@ -17,7 +17,7 @@ const client = new Client( {
 } );
 
 const fs = require( 'fs' );
-// const config = require( './config.json' );
+const config = require( './config.json' );
 require( 'dotenv' ).config()
 
 /* ------------------ COLLECTIONS ------------------ */
