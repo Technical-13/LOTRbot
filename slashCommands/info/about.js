@@ -21,7 +21,7 @@ module.exports = {
     }
   ],
 	cooldown: 2000,
-	run: async ( interaction, client ) {
+	run: async ( client, interaction ) => {
     console.log( 'Interaction options: %o', interaction.options );
     /*
 		const strAction = ( interaction.options.get( 'action' ).value ?? 'link' );
@@ -41,4 +41,4 @@ module.exports = {
 		  	interaction.reply( { content: 'You can check me out on GitHub:\n:link: <https://github.com/Technical-13/LOTRbot/tree/main>', ephemeral: interaction.inGuild() } );
 		}//*/
 	}
-}
+};
