@@ -22,8 +22,8 @@ module.exports = {
   ],
 	cooldown: 2000,
 	run: async ( client, interaction ) => {
-		const strAction = ( interaction.options.get( 'action' ) ?? ( interaction.options.get( 'action' ).value ?? 'link' ) : 'link' ) );
-    var strTitle = ( interaction.options.get( 'title' ) ?? ( interaction.options.get( 'title' ).value ?? '' ) : '' ) );
+		const strAction = ( interaction.options.get( 'action' ) ? ( interaction.options.get( 'action' ).value ?? 'link' ) : 'link' ) );
+    var strTitle = ( interaction.options.get( 'title' ) ? ( interaction.options.get( 'title' ).value ?? '' ) : '' ) );
     if ( strTitle ) { strTitle = '&title=' + encodeURI( strTitle ); }
 		switch ( strAction ) {
 			case 'sponsor':
