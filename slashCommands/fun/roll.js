@@ -38,7 +38,7 @@ module.exports = {
     const intSets = ( interaction.options.get( 'sets' ) ? ( interaction.options.get( 'sets' ).value || 1 ) : 1 );
     const intDice = ( interaction.options.get( 'dice' ) ? ( interaction.options.get( 'dice' ).value || 1 ) : 1 );
     const intSides = ( interaction.options.get( 'sides' ) ? ( interaction.options.get( 'sides' ).value || 6 ) : 6 );
-    const intMod = ( interaction.options.get( 'modifier' ) ? ( interaction.options.get( 'modifier' ).value || 0 ) : 0 );
+    const intMod = ( interaction.options.get( 'modifier' ) ? ( interaction.options.get( 'modifier' ).value || null ) : null );
 
 //    var objSets = {};
     var intRollTotal = 0;
