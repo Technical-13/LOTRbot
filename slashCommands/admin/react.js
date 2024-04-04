@@ -4,8 +4,9 @@ const { model, Schema } = require( 'mongoose' );
 module.exports = {
 	name: "react",
 	description: "What reaction do you want me to use on which message?",
+	type: ApplicationCommandType.ChatInput,
 	cooldown: 1000,
-	async run( interaction, client ) {
+  run: async ( client, interaction ) => {
     await interaction.deferReply( { ephemeral: true } );
     const myOwner = client.users.cache.get( process.env.OWNER_IDS.split( ';' )[ 0 ] );
     const { channel, options } = interaction;
