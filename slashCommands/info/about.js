@@ -4,7 +4,21 @@ module.exports = {
 	name: "about",
 	description: "Options to find the GitHub repository, report bugs, and suggest features!",
 	type: ApplicationCommandType.ChatInput,
-	cooldown: 3000,
+	options: [ {
+    name: 'action',
+    description: 'Link, Sponsor, Report Bug, Request Feature',
+    choices: [
+      { name: 'Link', value: 'link' },
+      { name: 'Sponsor', value: 'sponsor' },
+      { name: 'Report Bug', value: 'bug' },
+      { name: 'Request Feature', value: 'feature' }
+    ] },
+    {
+      name: 'title',
+      description: 'A short description of the bug or feature request'
+    }
+   ]
+	cooldown: 2000,
 	async run( interaction, client ) {
 		const strAction = ( interaction.options.getString( 'action' ) ?? 'link' );
     var strTitle = ( interaction.options.getString( 'title' ) ?? '' );
