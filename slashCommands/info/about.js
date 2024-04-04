@@ -22,6 +22,8 @@ module.exports = {
   ],
 	cooldown: 2000,
 	async run( interaction, client ) {
+    console.log( 'Interaction options: %o', interaction.options );
+    /*
 		const strAction = ( interaction.options.get( 'action' ).value ?? 'link' );
     var strTitle = ( interaction.options.get( 'title' ).value ?? '' );
     if ( strTitle ) { strTitle = '&title=' + encodeURI( strTitle ); }
@@ -37,6 +39,6 @@ module.exports = {
   			break;
 			case 'link' : default :
 		  	interaction.reply( { content: 'You can check me out on GitHub:\n:link: <https://github.com/Technical-13/LOTRbot/tree/main>', ephemeral: interaction.inGuild() } );
-		}
+		}//*/
 	}
 }
