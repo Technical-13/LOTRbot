@@ -21,8 +21,8 @@ module.exports = {
     }
   ],
 	cooldown: 2000,
-	async run( interaction, client ) {
-    console.log( 'Interaction: %o', interaction );
+	run: async ( interaction, client ) {
+    console.log( 'Interaction options: %o', interaction.options );
     /*
 		const strAction = ( interaction.options.get( 'action' ).value ?? 'link' );
     var strTitle = ( interaction.options.get( 'title' ).value ?? '' );
