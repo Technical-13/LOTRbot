@@ -10,6 +10,7 @@ const table = new AsciiTable().setHeading( 'Slash Commands', 'Stats' ).setBorder
 
 const TOKEN = process.env.token;
 const CLIENT_ID = process.env.CLIENT_ID;
+const DEV_GUILD_ID = process.env.DEV_GUILD_ID;
 
 const rest = new REST( { version: '9' } ).setToken( TOKEN );
 
@@ -44,8 +45,8 @@ module.exports = ( client ) => {
 	( async () => {
 			try {
 				await rest.put(
-					process.env.GUILD_ID ?
-					Routes.applicationGuildCommands( CLIENT_ID, process.env.GUILD_ID ) :
+					DEV_GUILD_ID ?
+					Routes.applicationGuildCommands( CLIENT_ID, DEV_GUILD_ID ) :
 					Routes.applicationCommands( CLIENT_ID ), 
 					{ body: slashCommands }
 				);
