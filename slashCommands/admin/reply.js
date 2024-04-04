@@ -1,4 +1,4 @@
-const logSchema = require( '../models/Log' );
+const logSchema = require( '../models/Log.js' );
 const { model, Schema } = require( 'mongoose' );
 
 module.exports = {
