@@ -1,7 +1,7 @@
 const { ApplicationCommandType } = require( 'discord.js' );
 
 module.exports = {
-	name: "bot",
+	name: "about",
 	description: "Options to find the GitHub repository, report bugs, and suggest features!",
 	type: ApplicationCommandType.ChatInput,
 	cooldown: 3000,
