@@ -1,5 +1,6 @@
 const logSchema = require( '../../models/Log.js' );
 const { model, Schema } = require( 'mongoose' );
+const { ApplicationCommandType } = require( 'discord.js' );
 
 module.exports = {
 	name: "reply",
