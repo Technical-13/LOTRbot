@@ -1,12 +1,58 @@
 const logSchema = require( '../../models/Log.js' );
 const { model, Schema } = require( 'mongoose' );
+const { ApplicationCommandType } = require( 'discord.js' );
 
 module.exports = {
+  /*
+  new SlashCommandBuilder()
+    .setName( 'setup-log' )
+    .setDescription( 'Set up log channels for this server.' )
+    .addSubcommand( subcommand => subcommand
+      .setName( 'default' )
+      .setDescription( 'Channel to log all requests.' )
+      .addChannelOption( option => option
+        .setName( 'default-channel' )
+        .setDescription( 'Default channel for all logs.' ) ) )
+    .addSubcommand( subcommand => subcommand
+      .setName( 'error' )
+      .setDescription( 'Channel to log bot errors.' )
+      .addChannelOption( option => option
+        .setName( 'error-channel' )
+        .setDescription( 'Select channel:' )
+        .setRequired( true ) ) )
+    .addSubcommand( subcommand => subcommand
+      .setName( 'react' )
+      .setDescription( 'Channel to log `/react` requests.' )
+      .addChannelOption( option => option
+        .setName( 'react-channel' )
+        .setDescription( 'Select channel:' )
+        .setRequired( true ) ) )
+    .addSubcommand( subcommand => subcommand
+      .setName( 'reply' )
+      .setDescription( 'Channel to log `/reply` requests.' )
+      .addChannelOption( option => option
+        .setName( 'reply-channel' )
+        .setDescription( 'Select channel:' )
+        .setRequired( true ) ) )
+    .addSubcommand( subcommand => subcommand
+      .setName( 'say' )
+      .setDescription( 'Channel to log `/say` requests.' )
+      .addChannelOption( option => option
+        .setName( 'say-channel' )
+        .setDescription( 'Select channel:' )
+        .setRequired( true ) ) ),	
+  */
 	name: 'setup-log',
-	description: 'Set up log channels for this server.',
+  
+	description: 'TBD',
+//	description: 'Set up log channels for this server.',
+	type: ApplicationCommandType.ChatInput,
+//	options: [ {
+//  } ],
 	cooldown: 1000,
-	async run( interaction, client ) {
-    await interaction.deferReply();
+	run: async ( client, interaction ) => {
+    interaction.reply( { content: 'TBD - under development', ephemeral: interaction.inGuild() } );
+/*    await interaction.deferReply();
     const { channel, options } = interaction;
     const botMods = process.env.OWNER_IDS.split( ';' );
     const botOwner = client.users.cache.get( botMods[ 0 ] );
@@ -74,6 +120,6 @@ module.exports = {
     } else {
       objGuildOwner.send( '<@' + interaction.author.id + '> attempted to modify my logging channels for `' + interaction.guild.name + '`.  Only those with the `MANAGE_SERVER` permission and my bot mods can do that.' );
       interaction.editReply( { content: 'Sorry, you do not have permission to do that.  Only those with the `MANAGE_SERVER` permission and my bot mods can do that.' } );
-    }
+    }//*/
   }
 }
