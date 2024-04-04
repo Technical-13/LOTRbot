@@ -1,14 +1,42 @@
-module.exports = {
-	name: "roll", // Command name
+module.exports = {	
+  /*
+  	new SlashCommandBuilder()
+    .setName( 'roll' )
+    .setNameLocalizations( {
+      de: 'würfeln',
+      fr: 'lancer-les-dés',
+      fi: 'heitä-noppaa',
+      pl: 'rzuć-kostką',
+      'sv-SE': 'rulla-tärningen' } )
+   */
+  name: "roll", // Command name
 	description: "Dice Roller", // Set the description
+	type: ApplicationCommandType.ChatInput,
+	options: [ {
+    name: 'dice',
+    description: 'How many dice? (default: 1)',
+    type: 4
+  }, {
+    name: 'sides',
+    description: 'How many sides per die? (default: 6)',
+    type: 4
+  }, {
+    name: 'sets',
+    description: 'How many sets of dice? (default: 1)',
+    type: 4
+  }, {
+    name: 'modifier',
+    description: '± to final roll for each die? (default: 0)',
+    type: 4
+  } ],
 	cooldown: 1000, // Set a cooldown of 1 second
 	async run( interaction, client ) {
     const myOwner = client.users.cache.get( process.env.OWNER_IDS.split( ';' )[ 0 ] );
     
-    const intSets = ( interaction.options.getInteger( 'sets' ) || 1 );
-    const intDice = ( interaction.options.getInteger( 'dice' ) || 1 );
-    const intSides = ( interaction.options.getInteger( 'sides' ) || 6 );
-    const intMod = ( interaction.options.getInteger( 'modifier' ) || null );
+    const intSets = ( interaction.options.get( 'sets' ) ? ( interaction.options.get( 'sets' ).value || 1 ) : 1 );
+    const intDice = ( interaction.options.get( 'dice' ) ? ( interaction.options.get( 'dice' ).value || 1 ) : 1 );
+    const intSides = ( interaction.options.get( 'sides' ) ? ( interaction.options.get( 'sides' ).value || 6 ) : 6 );
+    const intMod = ( interaction.options.get( 'modifier' ) ? ( interaction.options.get( 'modifier' ).value || 0 ) : 0 );
 
 //    var objSets = {};
     var intRollTotal = 0;
