@@ -1,3 +1,5 @@
+const { ApplicationCommandType } = require( 'discord.js' );
+
 module.exports = {
 	name: "bot",
 	description: "Options to find the GitHub repository, report bugs, and suggest features!",
