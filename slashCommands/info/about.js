@@ -7,6 +7,7 @@ module.exports = {
 	options: [ {
     name: 'action',
     description: 'Link, Sponsor, Report Bug, Request Feature',
+    type: 3,
     choices: [
       { name: 'Link', value: 'link' },
       { name: 'Sponsor', value: 'sponsor' },
@@ -15,7 +16,8 @@ module.exports = {
     ] },
     {
       name: 'title',
-      description: 'A short description of the bug or feature request'
+      description: 'A short description of the bug or feature request',
+      type: 3
     }
   ],
 	cooldown: 2000,
