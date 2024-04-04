@@ -1,11 +1,13 @@
 const logSchema = require( '../../models/Log.js' );
 const { model, Schema } = require( 'mongoose' );
+const { ApplicationCommandType } = require( 'discord.js' );
 
 module.exports = {
 	name: "say",
 	description: "What do you want me to say?",
+	type: ApplicationCommandType.ChatInput,
 	cooldown: 1000,
-	async run( interaction, client ) {
+	run: async ( client, interaction ) => {
     await interaction.deferReply( { ephemeral: true } );
     const myOwner = client.users.cache.get( process.env.OWNER_IDS.split( ';' )[ 0 ] );
     const speakChannel = interaction.options.getChannel( 'channel' ) || interaction.channel;
