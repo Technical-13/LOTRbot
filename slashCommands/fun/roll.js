@@ -33,7 +33,7 @@ module.exports = {
   } ],
 	cooldown: 1000, // Set a cooldown of 1 second
 	async run( interaction, client ) {
-    const myOwner = client.users.cache.get( process.env.OWNER_IDS.split( ';' )[ 0 ] );
+    const myOwner = client.users.get( process.env.OWNER_IDS.split( ';' )[ 0 ] );
     
     const intSets = ( interaction.options.get( 'sets' ) ? ( interaction.options.get( 'sets' ).value || 1 ) : 1 );
     const intDice = ( interaction.options.get( 'dice' ) ? ( interaction.options.get( 'dice' ).value || 1 ) : 1 );
