@@ -17,7 +17,7 @@ module.exports = {
       name: 'title',
       description: 'A short description of the bug or feature request'
     }
-   ]
+  ],
 	cooldown: 2000,
 	async run( interaction, client ) {
 		const strAction = ( interaction.options.getString( 'action' ) ?? 'link' );
