@@ -1,6 +1,6 @@
 {
-  "name": "LOTRbot",
-  "version": "2024.04.03",
+  "name": "LotRbot",
+  "version": "2024.10.27.15.13",
   "description": "",
   "main": "index.js",
   "scripts": {
