@@ -1,3 +1,5 @@
+require( 'dotenv' ).config();
+const ENV = process.env;
 const express = require( 'express' );
 const expressServer = express();
 const objTimeString = require( '../time.json' );
