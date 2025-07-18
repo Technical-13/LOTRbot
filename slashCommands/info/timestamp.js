@@ -2,8 +2,8 @@ const config = require( '../../config.json' );
 const wmfWikiEndpoint = 'https://api.wikimedia.org/w/api.php?origin=*';
 const chalk = require( 'chalk' );
 const { ApplicationCommandType, InteractionContextType } = require( 'discord.js' );
-const getGuildConfig = require( '../../functions/getGuildDB.js' );
-const userPerms = require( '../../functions/getPerms.js' );
+// const getGuildConfig = require( '../../functions/getGuildDB.js' );
+// const userPerms = require( '../../functions/getPerms.js' );
 const strScript = chalk.hex( '#FFA500' ).bold( './slashCommands/info/timestamp.js' );
 
 const validateInput = async function ( input ) {
@@ -53,7 +53,7 @@ module.exports = {
   run: async ( client, interaction ) => {
     await interaction.deferReply( { ephemeral: true } );
     const { channel, guild, options, user: member } = interaction;
-    const { isGlobalBlacklisted, content } = await userPerms( member, guild );
+    // const { isGlobalBlacklisted, content } = await userPerms( member, guild );
 
     try {
       const input = ( options.getString( 'datetime' ) ?? 'now' );
